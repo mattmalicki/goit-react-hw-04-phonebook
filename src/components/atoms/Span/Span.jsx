@@ -1,3 +1,3 @@
-export const Button = ({ children, className }) => {
+export const Span = ({ children, className }) => {
   return <span className={className}>{children}</span>;
 };
