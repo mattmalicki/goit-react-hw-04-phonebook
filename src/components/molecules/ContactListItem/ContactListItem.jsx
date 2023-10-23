@@ -5,7 +5,7 @@ export const ContactListItem = ({ item, classes }) => {
   return (
     <li className={classes.contactItem} id={item.id}>
       <Span className={classes.contactNumber}>{item.name}</Span>
-      <Span className={classes.contactNumber}>{item.number}</Span>
+      <Span className={classes.contactNumber}>{item.phone}</Span>
       <Button className={classes.contactButton} type="button">
         Delete
       </Button>
