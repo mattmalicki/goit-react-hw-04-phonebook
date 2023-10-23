@@ -36,7 +36,6 @@ export const App = () => {
   };
 
   const handleChangeFilter = event => {
-    event.preventDeafult();
     updateFilter(event.target.value);
   };
 
@@ -54,19 +53,22 @@ export const App = () => {
   };
 
   const handleDeleteButton = event => {
-    removeContact(event.target.id);
+    if (event.target.nodeName !== 'BUTTON') {
+      return;
+    }
+    const id = event.target.parentElement.id;
+    removeContact(id);
   };
 
   useEffect(() => {
     const contactsFromStorage = loadStorage('contacts');
-    console.log(contactsFromStorage);
-    contactsFromStorage && setContacts([...contactsFromStorage]);
+    contactsFromStorage.length > 0 && setContacts([...contactsFromStorage]);
   }, []);
 
   useEffect(() => {}, [filter]);
 
   useEffect(() => {
-    contacts.length > 0 && saveStorage('contacts', contacts);
+    saveStorage('contacts', contacts);
   }, [contacts]);
 
   return (
