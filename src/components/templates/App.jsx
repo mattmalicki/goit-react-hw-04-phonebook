@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 // Components
 import { Header } from 'components/atoms/Header/Header';
-import { ContactForm } from 'components/organisms/ContactList/ContactForm/ContactForm';
+import { ContactForm } from 'components/organisms/ContactForm/ContactForm';
 import { ContactList } from 'components/organisms/ContactList/ContactList';
 import { Filter } from 'components/molecules/Filter/Filter';
 // Imported libraries

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ContactListItem } from 'components/molecules/ContactListItem/ContactListItem';
 import styles from './ContactList.module.css';
 
@@ -9,4 +10,15 @@ export const ContactList = ({ contacts, onClick }) => {
       ))}
     </ul>
   );
+};
+
+ContactList.propTypes = {
+  onClick: PropTypes.func,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      phone: PropTypes.string,
+    })
+  ),
 };

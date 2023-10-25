@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Header = ({ level, children }) => {
   switch (level) {
     case 1:
@@ -15,4 +17,8 @@ export const Header = ({ level, children }) => {
     default:
       throw Error('Unknown level: ' + level);
   }
+};
+
+Header.propTypes = {
+  level: PropTypes.number,
 };

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Input = ({
   className,
   type = 'text',
@@ -18,4 +20,14 @@ export const Input = ({
       required={isRequired}
     />
   );
+};
+
+Input.propTypes = {
+  className: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  pattern: PropTypes.string,
+  title: PropTypes.string,
+  isRequired: PropTypes.bool,
+  onChange: PropTypes.func,
 };

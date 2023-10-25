@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Button } from 'components/atoms/Button/Button';
 import { Span } from 'components/atoms/Span/Span';
 
@@ -11,4 +12,13 @@ export const ContactListItem = ({ item, classes }) => {
       </Button>
     </li>
   );
+};
+
+ContactListItem.propTypes = {
+  classes: PropTypes.shape(),
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    phone: PropTypes.string,
+  }),
 };
