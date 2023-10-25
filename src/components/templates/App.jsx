@@ -61,8 +61,12 @@ export const App = () => {
   };
 
   useEffect(() => {
-    const contactsFromStorage = loadStorage('contacts');
-    contactsFromStorage.length > 0 && setContacts([...contactsFromStorage]);
+    try {
+      const contactsFromStorage = loadStorage('contacts');
+      contactsFromStorage.length > 0 && setContacts([...contactsFromStorage]);
+    } catch (e) {
+      console.log('Error ', e.toString());
+    }
   }, []);
 
   useEffect(() => {}, [filter]);
