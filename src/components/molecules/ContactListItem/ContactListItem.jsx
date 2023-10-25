@@ -17,7 +17,7 @@ export const ContactListItem = ({ item, classes }) => {
 ContactListItem.propTypes = {
   classes: PropTypes.shape(),
   item: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     name: PropTypes.string,
     phone: PropTypes.string,
   }),
